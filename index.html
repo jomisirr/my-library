@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Local Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">My Library</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Particles Background (Home Only) -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-book-open"></i> My Local Library</h1>
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <h1>WELCOME TO MY LIBRARY</h1>
+            <p>Your personal digital bookshelf • 100% offline • Made with love</p>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </section>
+
+        <!-- Add Book Form -->
+        <div class="form-card">
+            <h2>Add New Book</h2>
+            <form id="book-form">
+                <input type="text" id="title" placeholder="Title" required>
+                <input type="text" id="author" placeholder="Author" required>
+                <input type="text" id="category" placeholder="Category (e.g. Fantasy)" required>
+                <input type="url" id="cover" placeholder="Cover URL (Unsplash link)">
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search books...">
+            <select id="category-filter">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+
+        <!-- Books Grid -->
+        <div id="books-grid"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>My Local Library</h3>
+                    <p>Your offline digital bookshelf since 2025</p>
+                </div>
+                <div class="footer-middle">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Made with <i class="fas fa-heart pulse"></i> by <strong>Joseph</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Book</h2>
+            <form id="edit-form">
+                <input type="text" id="edit-title" required>
+                <input type="text" id="edit-author" required>
+                <input type="text" id="edit-category" required>
+                <input type="url" id="edit-cover" placeholder="Cover URL">
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

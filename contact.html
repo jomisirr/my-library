@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | My Local Library</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">My Library</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <button class="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1><i class="fas fa-envelope"></i> Contact</h1>
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container contact-page">
+    <h2>Get In Touch</h2>
+    <p>Have questions? We'd love to hear from you!</p>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p class="success-msg">Thanks! Your message has been sent. (Demo: Resets in 2s)</p>
+    </form>
+    <p style="margin-top: 30px; font-size: 0.9rem; color: #7f8c8d;">
+      <i class="fas fa-info-circle"></i> Note: This is a demo app—no real emails sent. Made for learning • No data collected • 100% offline
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <h3>My Local Library</h3>
+          <p>Your offline digital bookshelf since 2025</p>
+        </div>
+        <div class="footer-middle">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-right">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Made with <i class="fas fa-heart pulse"></i> by <strong>Joseph</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

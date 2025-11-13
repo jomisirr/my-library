@@ -1,0 +1,646 @@
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Particles Overlay (for home only) */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #f4f6f9, #e8f4f8);
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+nav {
+  background: #2c3e50;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1abc9c;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* ========================================
+   Header & Welcome
+   ======================================== */
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 10px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+#theme-toggle:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.welcome {
+  text-align: center;
+  padding: 40px 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  margin-bottom: 30px;
+  border-radius: 12px;
+}
+
+.welcome h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.stars {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #f39c12;
+}
+
+/* ========================================
+   Main Content
+   ======================================== */
+main {
+  min-height: 70vh;
+}
+
+/* Form Card */
+.form-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+input, select, button, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #1abc9c;
+}
+
+button {
+  background: #1abc9c;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #16a085;
+}
+
+.delete-btn, .edit-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  width: auto;
+}
+
+.edit-btn {
+  background: #3498db;
+  margin-right: 5px;
+}
+
+.delete-btn:hover { background: #c0392b; }
+.edit-btn:hover { background: #2980b9; }
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Books Grid */
+#books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.book-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #eee;
+}
+
+.book-info {
+  padding: 15px;
+}
+
+.book-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.book-info p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 8px;
+}
+
+.category-tag {
+  display: inline-block;
+  background: #ecf0f1;
+  color: #2c3e50;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* About Page */
+.about-page .page-title {
+  text-align: center;
+  margin: 40px 0 30px;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.about-content img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.text h2 {
+  color: #2c3e50;
+  margin: 20px 0 12px;
+  font-size: 1.5rem;
+}
+
+.text p {
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.team-card {
+  display: flex;
+  gap: 15px;
+  padding: 18px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.team-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  margin: 0 0 5px;
+  color: #2c3e50;
+}
+
+.team-card p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 3px 0;
+}
+
+.team-card p:last-child {
+  font-style: italic;
+  color: #1abc9c;
+  margin-top: 8px;
+}
+
+/* Contact Page */
+.contact-page {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-page h2 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact-form input, #contact-form textarea {
+  margin-bottom: 15px;
+}
+
+#contact-form button {
+  width: auto;
+  padding: 12px 24px;
+}
+
+.success-msg {
+  display: none;
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Edit Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close:hover { color: #000; }
+
+/* ========================================
+   Footer
+   ======================================== */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-heart.pulse {
+  color: #e74c3c;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.credit {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left, .footer-middle, .footer-right {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-middle ul, .footer-right .social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-middle li, .footer-right a {
+  margin: 5px 0;
+  color: #bdc3c7;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  color: #1abc9c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+  width: 100%;
+}
+
+/* No Books Message */
+.no-books {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 40px;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* ========================================
+   Scroll to Top
+   ======================================== */
+#scrollTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #1abc9c;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+  display: none;
+  z-index: 1000;
+}
+
+#scrollTop:hover {
+  background: #16a085;
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   Dark Mode
+   ======================================== */
+.dark-mode {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.dark-mode .form-card,
+.dark-mode .book-card,
+.dark-mode .team-card,
+.dark-mode .modal-content {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background: #2c3e50;
+  border-color: #34495e;
+  color: #ecf0f1;
+}
+
+.dark-mode .book-info h3,
+.dark-mode .text h2,
+.dark-mode .page-title,
+.dark-mode .team-card h3,
+.dark-mode .contact-page h2 {
+  color: #1abc9c;
+}
+
+.dark-mode .book-info p,
+.dark-mode .text p,
+.dark-mode .team-card p {
+  color: #bdc3c7;
+}
+
+.dark-mode .category-tag {
+  background: #16a085;
+  color: white;
+}
+
+.dark-mode footer,
+.dark-mode nav,
+.dark-mode header,
+.dark-mode .welcome {
+  background: #1a252f;
+}
+
+.dark-mode .no-books {
+  color: #95a5a6;
+}
+
+.dark-mode .success-msg {
+  background: #2d5a3a;
+  color: #d4edda;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #2c3e50;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links a {
+    padding: 12px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .filters {
+    flex-direction: column;
+  }
+  
+  .about-content,
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .team-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .team-card img {
+    margin: 0 auto;
+  }
+  
+  .footer-left, .footer-middle, .footer-right {
+    text-align: center;
+    min-width: auto;
+  }
+  
+  .welcome h1 {
+    font-size: 2rem;
+  }
+}
